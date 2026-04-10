@@ -375,7 +375,8 @@ hr {
 /* SIDEBAR */
 .meto-sidebar {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  padding-top: 40px; /* 👈 empuja un poco hacia abajo */
 }
 
 .meto-btn {
@@ -439,6 +440,90 @@ hr {
   margin-top: 30px;
   font-size: 14px;
   color: #6b7280;
+}
+
+
+/*Servicios III*/
+
+.tabla-section {
+  padding: 100px 20px;
+  background: #f5f7fa;
+}
+
+.tabla-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 👇 SCROLL LATERAL */
+.tabla-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* TABLA */
+.tabla-cursos {
+  width: 100%;
+  min-width: 800px; /* 👈 clave para que no se rompa */
+  border-collapse: collapse;
+  background: #f3e9df;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* HEAD */
+.tabla-cursos thead {
+  background: #e9ded2;
+}
+
+.tabla-cursos th {
+  text-align: left;
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2d2d2d;
+}
+
+/* CELDAS */
+.tabla-cursos td {
+  padding: 22px;
+  font-size: 16px;
+  color: #3a3a3a;
+  vertical-align: top;
+}
+
+/* LINEAS */
+.tabla-cursos tr {
+  border-bottom: 1px solid #e0d6ca;
+}
+
+.tabla-cursos tr:last-child {
+  border-bottom: none;
+}
+
+/* COLUMNAS */
+.tabla-cursos td:nth-child(1) {
+  width: 35%;
+}
+
+.tabla-cursos td:nth-child(2) {
+  width: 25%;
+}
+
+.tabla-cursos td:nth-child(3) {
+  width: 40%;
+}
+
+/* ✨ SCROLL PRO (opcional pero recomendado) */
+.tabla-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.tabla-scroll::-webkit-scrollbar-thumb {
+  background: #d1c7bb;
+  border-radius: 10px;
+}
+
 }
 
 /*Menu hamburguesa*/
@@ -1204,6 +1289,8 @@ img {
     color: white;
     transform: rotateY(180deg);
   }
+
+  
     
 
 @media (max-width: 900px) {
