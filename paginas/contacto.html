@@ -55,39 +55,76 @@
 
 
 
-    <div class="container__contact div__offset" id="contacto">
-        <div class="location__maps">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d467692.3953574584!2d-46.92494081777092!3d-23.681434666192445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce448183a461d1%3A0x9ba94b08ff335bae!2sS%C3%A3o%20Paulo%2C%20Estado%20de%20S%C3%A3o%20Paulo%2C%20Brasil!5e0!3m2!1ses-419!2sar!4v1775757851908!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-        <div class="form__contact">
-            <h2>Envianos tu consuta</h2>
-            <form action="https://formsubmit.co/scalalucasmartin@gmail.com" method="POST" name="formulario_contacto" netlify>
-                <div class="name__email">
-                    <input type="text" placeholder="Nombre" name="nombre">
-                    <input type="email" placeholder="Correo electrónico" name="correo">
-                </div>
-                <div class="subject__telephone">
-                    <input type="text" placeholder="Tema" name="tema">
-                    <input type="text" placeholder="Teléfono" name="telefono">
-                </div>
+<div class="container__contact div__offset" id="contacto">
 
-                <textarea name="mensaje" placeholder="Mensaje" name="mensaje"></textarea>
+    <div class="location__maps">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d467692.3953574584!2d-46.92494081777092!3d-23.681434666192445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce448183a461d1%3A0x9ba94b08ff335bae!2sS%C3%A3o%20Paulo%2C%20Estado%20de%20S%C3%A3o%20Paulo%2C%20Brasil!5e0!3m2!1ses-419!2sar!4v1775863560990!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
 
-                <input type="submit" class="btn__text" value="Enviar Mensaje">
+    <div class="form__contact">
+        <h2>Envíanos tu consulta</h2>
 
-                <input type="hidden" name="_next" value="https://compumoron.com">
-                <input type="hidden" name="_captcha" value="false">
-            </form>
-        </div>
+        <form action="https://formsubmit.co/scalalucasmartin@gmail.com" 
+              method="POST" 
+              name="formulario_contacto" 
+              netlify
+              id="formulario_contacto_2">
 
-        <div class="modal__message-send" id="mensaje">
-            <div class="message">
-                <h1>Su mensaje ha sido enviado correctamente</h1>
-                <p>Nos estaremos poniendo en contacto con usted lo antes posible. Muchas gracias por su solicitud.</p>
-                <a href="../index.html">Aceptar</a>
+            <div class="name__email">
+                <input type="text" placeholder="Nombre" name="nombre" id="nombre2">
+                <input type="email" placeholder="Correo electrónico" name="correo" id="correo2">
             </div>
+
+            <div class="subject__telephone">
+                <input type="text" placeholder="Tema" name="tema" id="tema2">
+                <input type="text" placeholder="Teléfono" name="telefono" id="telefono2">
+            </div>
+
+            <textarea name="mensaje" id="mensaje2" placeholder="Mensaje"></textarea>
+
+            <input type="submit" class="btn__text" value="Enviar Mensaje">
+
+            <!-- mantenemos esto para no romper nada -->
+            <input type="hidden" name="_next" value="https://compumoron.com">
+            <input type="hidden" name="_captcha" value="false">
+
+        </form>
+    </div>
+
+    <div class="modal__message-send" id="mensaje">
+        <div class="message">
+            <h1>Su mensaje ha sido enviado correctamente</h1>
+            <p>Nos estaremos poniendo en contacto con usted lo antes posible. Muchas gracias por su solicitud.</p>
+            <a href="../index.html">Aceptar</a>
         </div>
     </div>
+
+</div>
+
+
+<script>
+document.getElementById("formulario_contacto_2").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let nombre = document.getElementById("nombre2").value;
+    let correo = document.getElementById("correo2").value;
+    let tema = document.getElementById("tema2").value;
+    let telefono = document.getElementById("telefono2").value;
+    let mensaje = document.getElementById("mensaje2").value;
+
+    let texto = `Hola! 👋 Me contacto desde la web:
+
+🧑 Nombre: ${nombre}
+📧 Email: ${correo}
+📌 Tema: ${tema}
+📞 Teléfono: ${telefono}
+💬 Mensaje: ${mensaje}`;
+
+    let url = `https://wa.me/5491168846640?text=${encodeURIComponent(texto)}`;
+
+    window.open(url, "_blank");
+});
+</script>
 
 <footer>
     <div class="container__footer">
